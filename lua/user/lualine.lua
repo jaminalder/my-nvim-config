@@ -11,7 +11,7 @@ local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
-	symbols = { error = " ", warn = " " },
+	symbols = { error = "e ", warn = "w " },
 	colored = false,
 	update_in_insert = false,
 	always_visible = true,
@@ -20,7 +20,7 @@ local diagnostics = {
 local diff = {
 	"diff",
 	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+	symbols = { added = "a ", modified = "m ", removed = "d " }, -- changes diff symbols
   cond = hide_in_width
 }
 
@@ -39,8 +39,8 @@ local filetype = {
 
 local branch = {
 	"branch",
-	icons_enabled = true,
-	icon = "",
+	icons_enabled = false,
+	icon = nil,
 }
 
 local location = {
@@ -64,7 +64,7 @@ end
 
 lualine.setup({
 	options = {
-		icons_enabled = true,
+		icons_enabled = false,
 		theme = "auto",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
